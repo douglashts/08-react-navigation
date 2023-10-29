@@ -19,11 +19,15 @@ const Details = () => {
         }
         setUser(result);
         //result = { image:{src:'',alt:''}, name:'', description:''}
+        return () => {
+            console.log('O Componente desmontou no DOM');
+        }
     }, [parameters]);
 
     return (
         <div>
             <h1>Detalhes</h1>
+            {console.log('O Complonente teve um Render.')}
             {user === undefined && (
                 <div>
                     <p>Carregando...</p>
